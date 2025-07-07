@@ -1,8 +1,7 @@
 import streamlit as st
-import openai
-
-# Setup OpenAI client using v1.x syntax
-client = openai.OpenAI(api_key="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")  
+import os
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+  
 st.set_page_config(page_title="DSCPL - Spiritual Chatbot", layout="centered")
 st.title("🙏 DSCPL - Your Spiritual Assistant")
 st.write("Welcome! How can I help you today on your spiritual journey?")

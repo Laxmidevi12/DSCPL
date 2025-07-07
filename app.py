@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import openai
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
   
 st.set_page_config(page_title="DSCPL - Spiritual Chatbot", layout="centered")

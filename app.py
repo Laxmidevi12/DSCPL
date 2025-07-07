@@ -1,14 +1,10 @@
-
 import streamlit as st
 import openai
 
-
-openai.api_key = "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"  
-
+# Setup OpenAI client using v1.x syntax
+client = openai.OpenAI(api_key="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")  
 st.set_page_config(page_title="DSCPL - Spiritual Chatbot", layout="centered")
-
 st.title("🙏 DSCPL - Your Spiritual Assistant")
-
 st.write("Welcome! How can I help you today on your spiritual journey?")
 
 options = [
@@ -32,10 +28,9 @@ if choice:
             Provide encouragement with a Bible verse, a short message, and an optional prayer.
             Make it gentle and inspiring.
             """
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",  # or "gpt-4" if available
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": prompt}]
             )
-
-            reply = response['choices'][0]['message']['content']
+            reply = response.choices[0].message.content
             st.markdown(reply)

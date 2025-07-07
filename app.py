@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import openai
 OPENAI_API_KEY = "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"
-client = openai.OpenAI(api_key=OPENAI_API_KEY])
+client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
   
 st.set_page_config(page_title="DSCPL - Spiritual Chatbot", layout="centered")
